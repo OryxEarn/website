@@ -7,11 +7,6 @@ h3, p {
 	color:white;
 }
 
-.img {
-  position: relative;
-  top: 1.5px;
-}
-
 ul {
   list-style-type: none;
   margin: 0;
@@ -24,7 +19,7 @@ li {
   float: left;
 }
 
-a, .dropbtn {
+li a, .dropbtn {
   display: inline-block;
   color: white;
   text-align: center;
@@ -32,7 +27,7 @@ a, .dropbtn {
   text-decoration: none;
 }
 
-a:hover, .dropdown:hover .dropbtn {
+li a:hover, .dropdown:hover .dropbtn {
   background-color: red;
 }
 
