@@ -17,7 +17,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: white;
 }
 
 li {
@@ -26,7 +26,7 @@ li {
 
 a, .dropbtn {
   display: inline-block;
-  color: white;
+  color: black;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -34,6 +34,7 @@ a, .dropbtn {
 
 a:hover, .dropdown:hover .dropbtn {
   background-color: red;
+  text-align: center;
 }
 
 li.dropdown {
