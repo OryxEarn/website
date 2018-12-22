@@ -1,0 +1,23 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "OryxEarn chat",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OryxEarn/website.git"
+  },
+  "author": "Liggnus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OryxEarn/website/issues"
+  },
+  "homepage": "https://github.com/OryxEarn/website#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "socket.io": "^2.2.0"
+  }
+}
