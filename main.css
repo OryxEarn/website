@@ -13,7 +13,7 @@ h3, p {
   margin-left: 20px;
 }
 
-ul {
+.menu {
   list-style-type: none;
   margin-top: -8px;
   margin-left: -8px;
@@ -23,7 +23,14 @@ ul {
   background-color: #222;
 }
 
-li {
+#chatmsg {
+  list-style-type: none;
+  background-color: #222;
+  padding: 4px;
+  color: white;
+}
+
+.menu > li {
   float: left;
 }
 
@@ -41,7 +48,7 @@ a:hover, .dropdown:hover .dropbtn {
   background-color: red;
 }
 
-li.dropdown {
+.menu > li.dropdown {
   display: inline-block;
 }
 
