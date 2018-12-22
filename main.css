@@ -20,7 +20,7 @@ ul {
   margin-right: -8px;
   padding: 4px;
   overflow: hidden;
-  background-color: black;
+  background-color: #222;
 }
 
 li {
@@ -69,4 +69,14 @@ li.dropdown {
 
 .space {
   margin-left: 200px;
+}
+
+.chatbox {
+  border: solid;
+  padding: 10px;
+  padding-bottom: 100%;
+  margin-left: 0px;
+  margin-top: -16px;
+  width: 20%;
+  background-color: black;
 }
