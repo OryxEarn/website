@@ -1,5 +1,5 @@
 body {
-	background:black;
+	background-image: url("sitebackground.jpg");
 	font-family: georgia;
 }
 
@@ -20,7 +20,7 @@ ul {
   margin-right: -8px;
   padding: 4px;
   overflow: hidden;
-  background-color: white;
+  background-color: black;
 }
 
 li {
@@ -29,7 +29,7 @@ li {
 
 a, .dropbtn {
   display: inline-block;
-  color: black;
+  color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
