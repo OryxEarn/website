@@ -34,6 +34,7 @@ a, .dropbtn {
   padding: 14px 16px;
   text-decoration: none;
   font-family: impact;
+  letter-spacing: 1.5px;
 }
 
 a:hover, .dropdown:hover .dropbtn {
@@ -77,6 +78,6 @@ li.dropdown {
   padding-bottom: 100%;
   margin-left: 0px;
   margin-top: -16px;
-  width: 20%;
+  width: 15%;
   background-color: black;
 }
