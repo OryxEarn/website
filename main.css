@@ -1,10 +1,10 @@
 body {
-	background:#888;
+	background:black;
 	font-family: georgia;
 }
 
 h3, p {
-	color:black;
+	color:white;
 }
 
 .img {
@@ -33,6 +33,7 @@ a, .dropbtn {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  font-family: impact;
 }
 
 a:hover, .dropdown:hover .dropbtn {
@@ -67,5 +68,5 @@ li.dropdown {
 }
 
 .space {
-  margin-left: 175px;
+  margin-left: 200px;
 }
