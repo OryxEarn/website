@@ -20,8 +20,8 @@ io.on('connection', function(socket){
 		if (msg.slice(0, 3) == "/w ") {
 			wid = msg.split(" ")[1];
 			msg = msg.split(" ").slice(2).join(" ");
-			io.to(`${wid}`).emit('whisper', msg, wid, socket.name);
-			io.to(`${socket.id}`).emit('whisper', msg, wid, socket.name);
+			io.to(`${wid}`).emit('whisper', msg, wid, id);
+			io.to(`${socket.id}`).emit('whisper', msg, wid, id);
 		} else {
 			io.emit('message', msg, id);
 		}
