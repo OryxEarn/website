@@ -17,7 +17,7 @@ io.on('connection', function(socket){
 		online ++;
 	}
 	username = "Guest" + online.toString(16);
-	io.to(`${socket.id}`).emit("connect", username)//.toString(16));
+	io.to(`${socket.id}`).emit("connect", "username")//.toString(16));
 	socket.on('message', function(msg, id){
 		if (msg.slice(0, 3) == "/w ") {
 			wid = msg.split(" ")[1];
