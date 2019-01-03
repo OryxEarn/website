@@ -16,8 +16,6 @@ io.on('connection', function(socket){
 	for (let i in io.sockets.clients().sockets) {
 		online ++;
 	}
-	username = "Guest" + online.toString(16);
-	io.to(`${socket.id}`).emit("connect", "username")//.toString(16));
 	socket.on('message', function(msg, id){
 		if (msg.slice(0, 3) == "/w ") {
 			wid = msg.split(" ")[1];
@@ -37,6 +35,8 @@ io.on('connection', function(socket){
 		}
 		io.emit("online", online);
 	});
+	io.emit('you', num);
+	num++;
 });
 
 http.listen(port, function(){
