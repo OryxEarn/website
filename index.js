@@ -35,7 +35,7 @@ io.on('connection', function(socket){
 		}
 		io.emit("online", online);
 	});
-	io.emit('you', num);
+	io.to(socket.id).emit('you', num);
 	num++;
 });
 
