@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	var socket = io();
 	$('#sendmsg').click(function(){
+		console.log(socket.username);
 		//$('#m').val("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 		var msg = $('#m').val();
 		socket.emit('message', msg, socket.id);

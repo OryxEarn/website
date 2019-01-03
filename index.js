@@ -4,6 +4,7 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
 var port = process.env.PORT || 3000;
+var num = 0;
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/public/index.html');
@@ -11,7 +12,8 @@ app.get('/', function(req, res){
 });
 
 io.on('connection', function(socket){
-	socket.username = "Guest";
+	socket.username = "Guest" + num.toString(16);
+	num++;
 	socket.on('message', function(msg, id){
 		if (msg.slice(0, 3) == "/w ") {
 			wid = msg.split(" ")[1];
@@ -34,7 +36,6 @@ io.on('connection', function(socket){
 		}
 		io.emit("online", online);
 	});
-	console.log("Hey");
 });
 
 http.listen(port, function(){
