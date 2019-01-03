@@ -12,8 +12,9 @@ app.get('/', function(req, res){
 });
 
 io.on('connection', function(socket){
-	socket.username = "Guest" + num.toString(16);
+	username = "Guest" + num.toString(16);
 	num++;
+	io.to(`${socket.id}`).emit("connect", username);
 	socket.on('message', function(msg, id){
 		if (msg.slice(0, 3) == "/w ") {
 			wid = msg.split(" ")[1];
