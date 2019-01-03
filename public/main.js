@@ -3,7 +3,7 @@ $(document).ready(function(){
 	$('#sendmsg').click(function(){
 		//$('#m').val("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 		var msg = $('#m').val();
-		socket.emit('message', msg, socket);
+		socket.emit('message', msg, socket.id);
 		$('#m').val('');
 		return false;
 	});
@@ -11,7 +11,7 @@ $(document).ready(function(){
 		/*if( ($("#chat-window")[0].scrollHeight - $("#chat-window")[0].scrollTop - $("#chat-window")[0].clientHeight) < 200){
 			$("#chat-window").animate({ scrollTop: $('#chat-window')[0].scrollHeight}, 400);
 		}*/
-		var html = "<li class='chatmsg'>" + id.username + ":" + "<br>" + msg + "</li>";
+		var html = "<li class='chatmsg'>" + id + ":" + "<br>" + msg + "</li>";
 		$('#messages').append(html);
 	});
 	socket.on('whisper', function(msg, wid, id){
@@ -22,7 +22,7 @@ $(document).ready(function(){
 		if (socket.id == id) {
 			var html = "<li class='chatmsg'>You whisper to " + wid + ":" + "<br>" + msg + "</li>";
 		} else {
-			var html = "<li class='chatmsg'>" + socket.username + " whispers to you:" + "<br>" + msg + "</li>";
+			var html = "<li class='chatmsg'>" + id + " whispers to you:" + "<br>" + msg + "</li>";
 		}
 		$('#messages').append(html);
 	});
