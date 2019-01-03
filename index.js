@@ -36,6 +36,7 @@ io.on('connection', function(socket){
 		io.emit("online", online);
 	});
 	io.to(socket.id).emit('you', "Guest"+num.toString(16));
+	socket.name = "Guest"+num.toString(16)
 	num++;
 });
 
