@@ -8,8 +8,8 @@ $(document).ready(function(){
 		$('#m').val('');
 		return false;
 	});
-	socket.on('you', function(msg){
-		console.log(msg);
+	socket.on('you', function(name){
+		socket.username = name;
 	});
 	socket.on('message', function(msg, id){
 		/*if( ($("#chat-window")[0].scrollHeight - $("#chat-window")[0].scrollTop - $("#chat-window")[0].clientHeight) < 200){

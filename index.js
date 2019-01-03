@@ -20,8 +20,8 @@ io.on('connection', function(socket){
 		if (msg.slice(0, 3) == "/w ") {
 			wid = msg.split(" ")[1];
 			msg = msg.split(" ").slice(2).join(" ");
-			io.to(`${wid}`).emit('whisper', msg, wid, id);
-			io.to(`${socket.id}`).emit('whisper', msg, wid, id);
+			io.to(`${wid}`).emit('whisper', msg, wid, socket.name);
+			io.to(`${socket.id}`).emit('whisper', msg, wid, socket.name);
 		} else {
 			io.emit('message', msg, id);
 		}
@@ -35,7 +35,7 @@ io.on('connection', function(socket){
 		}
 		io.emit("online", online);
 	});
-	io.to(socket.id).emit('you', num);
+	io.to(socket.id).emit('you', "Guest"+num.toString(16));
 	num++;
 });
 
