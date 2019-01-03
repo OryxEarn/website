@@ -11,7 +11,7 @@ $(document).ready(function(){
 	socket.on("connect", function (name) {
 		console.log(name);
 		socket.username = name;
-	})
+	});
 	socket.on('message', function(msg, id){
 		/*if( ($("#chat-window")[0].scrollHeight - $("#chat-window")[0].scrollTop - $("#chat-window")[0].clientHeight) < 200){
 			$("#chat-window").animate({ scrollTop: $('#chat-window')[0].scrollHeight}, 400);
