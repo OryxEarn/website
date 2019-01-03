@@ -12,9 +12,12 @@ app.get('/', function(req, res){
 });
 
 io.on('connection', function(socket){
-	username = "Guest" + num.toString(16);
-	num++;
-	io.to(`${socket.id}`).emit("connect", num)//.toString(16));
+	var online = 0;
+	for (let i in io.sockets.clients().sockets) {
+		online ++;
+	}
+	username = "Guest" + online.toString(16);
+	io.to(`${socket.id}`).emit("connect", username)//.toString(16));
 	socket.on('message', function(msg, id){
 		if (msg.slice(0, 3) == "/w ") {
 			wid = msg.split(" ")[1];
@@ -25,10 +28,7 @@ io.on('connection', function(socket){
 			io.emit('message', msg, id);
 		}
 	});
-	var online = 0;
-	for (let i in io.sockets.clients().sockets) {
-		online ++;
-	}
+	
 	io.emit("online", online);
 	socket.on('disconnect', function(){
 		var online = 0;
