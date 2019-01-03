@@ -9,6 +9,7 @@ $(document).ready(function(){
 		return false;
 	});
 	socket.on("connect", function (name) {
+		console.log(name);
 		socket.username = name;
 	})
 	socket.on('message', function(msg, id){
